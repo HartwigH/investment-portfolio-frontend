@@ -1,0 +1,119 @@
+@import "./shared/fonts";
+
+// Pages
+@import "./shared/index";
+@import "./shared/login";
+@import "./shared/about";
+@import "./shared/manager";
+
+// COMPONENTS
+@import "./shared/header";
+@import "./shared/portfolioModal";
+
+html,
+body {
+  font-family: "Montserrat", "Helvetica";
+  height: 100%;
+}
+
+.self-typed {
+  font-size: 32px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: black;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.base-page {
+  padding-top: 150px;
+  color: black;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.cover {
+  background-image: linear-gradient(0deg, #f6b3187a 0%, #b5fffc 100%);
+
+  overflow: hidden;
+  position: relative;
+}
+
+.jumbotron {
+  background-color: white;
+}
+
+.orange-button {
+  background-color: #f6b318; /* Green */
+  margin-top: 20px;
+  padding: 15px 62px;
+  text-align: center;
+  border-radius: 0;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: 4px solid black;
+  color: black;
+
+  &:hover,
+  &:focus {
+    background-color: #00bc6e;
+    color: black;
+    border: 4px solid black;
+  }
+}
+
+.green-button-sm {
+  background-color: #017a48; /* Green */
+  text-align: center;
+  border-radius: 0;
+  // text-transform: uppercase;
+  // font-weight: bold;
+  color: white;
+  border: 0px;
+
+  &:hover,
+  &:focus {
+    background-color: #016139;
+    color: white;
+    border: 0px;
+  }
+}
+
+.orange-button-sm {
+  background-color: #f6b318; /* Green */
+  text-align: center;
+  border-radius: 0;
+  // text-transform: uppercase;
+  // font-weight: bold;
+  color: white;
+  border: 0px;
+
+  &:hover,
+  &:focus {
+    background-color: #d49c17;
+    color: white;
+    border: 0px;
+  }
+}
+
+.red-button-sm {
+  background-color: #ac230b; /* Green */
+  text-align: center;
+  border-radius: 0;
+  // text-transform: uppercase;
+  // font-weight: bold;
+  color: white;
+  border: 0px;
+
+  &:hover,
+  &:focus {
+    background-color: #972511;
+    color: white;
+    border: 0px;
+  }
+}
+
