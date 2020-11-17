@@ -25,14 +25,14 @@ const About: React.FC<Props> = ({ about }) => {
           <p className="lead">{about.content}</p>
           <hr className="my-2" />
           <div className="text-center"></div>
-          {about.cover.url && (
+          {about.cover.url !== null && (
             <img
               src={API_URL + about.cover.url}
               className="img-fluid about-img"
               alt=""
             />
           )}
-          {!about.cover.url && (
+          {about.cover.url === null && (
             <p>
               Like with project updates on Heroku, the file system doesn't
               support local uploading of files as they will be wiped when Heroku

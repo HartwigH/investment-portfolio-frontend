@@ -112,7 +112,6 @@ class Manager extends React.Component<{}, ownState> {
 
   render() {
     const { data, loading } = this.state;
-    console.log(data.length)
     return (
       <BaseLayout>
         <BasePage>

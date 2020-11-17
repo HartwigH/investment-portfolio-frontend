@@ -41,12 +41,11 @@ const Login: React.FC = () => {
     } else if (loginResponse === 0) {
       setVisible(true);
       setErrorMessage("No server connection.");
-    } else {
+    } else if (typeof loginResponse === 'object') {
       setCookie(null, "jwt", loginResponse.jwt, {
         maxAge: 30 * 24 * 60 * 60,
         path: "/",
       });
-
       Router.push("/manager");
     }
   }
