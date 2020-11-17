@@ -45,12 +45,10 @@ const About: React.FC<Props> = ({ about }) => {
   );
 };
 
-export async function getServerSideProps() {
-  const about = await getAbout();
-
+export async function getStaticProps() {
   return {
     props: {
-      about: about,
+      about: await getAbout(),
     },
   };
 }
