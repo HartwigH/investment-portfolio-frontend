@@ -26,6 +26,7 @@ interface ownState {
   data?: any;
   pageIndex: number;
   pageSize: number;
+  setVisibility?: string;
 }
 
 class Manager extends React.Component<{}, ownState> {
@@ -37,6 +38,7 @@ class Manager extends React.Component<{}, ownState> {
       loading: true,
       pageIndex: 0,
       pageSize: 6,
+      setVisibility: "",
     };
 
     this.getData = this.getData.bind(this);
@@ -46,6 +48,7 @@ class Manager extends React.Component<{}, ownState> {
     this.handleColor = this.handleColor.bind(this);
     this.handlePrevPageClick = this.handlePrevPageClick.bind(this);
     this.handleNextPageClick = this.handleNextPageClick.bind(this);
+    this.handleVisibility = this.handleVisibility.bind(this);
   }
 
   componentDidMount() {
@@ -110,17 +113,21 @@ class Manager extends React.Component<{}, ownState> {
     }));
   }
 
+  handleVisibility() {
+    this.setState({ setVisibility: "remove-visibility" });
+  }
+
   render() {
-    const { data, loading } = this.state;
+    const { data, loading, setVisibility } = this.state;
     return (
       <BaseLayout>
         <BasePage>
           <Container className="manager-jumbotron">
             <Row>
-              <Col md="6">
-                <h2> Portfolio management </h2>
+              <Col md="6" className="col">
+                <h2 className="manager-header"> Portfolio management </h2>
               </Col>
-              <Col md="6">
+              <Col md="6" className="col">
                 <PortfolioModal
                   handleFormSubmit={this.handleCreate}
                   buttonStyle="green-button-sm"
@@ -132,7 +139,14 @@ class Manager extends React.Component<{}, ownState> {
             </Row>
           </Container>
 
-          <Table dark>
+          <Table dark responsive className="manager-table">
+            {!loading && (
+              <img
+                src="/static/images/gesture.gif"
+                className={`img-fluid gesture-img ${setVisibility}`}
+                onClick={this.handleVisibility}
+              />
+            )}
             <thead>
               <tr>
                 <th>Symbol</th>
@@ -210,7 +224,7 @@ class Manager extends React.Component<{}, ownState> {
           {data.length > 6 && (
             <Container className="manager-jumbotron-bottom">
               <Row>
-                <Col md="6">
+                <Col md="6" className="col">
                   <Button
                     className="btn-sm-dark"
                     onClick={(event) => this.handlePrevPageClick(event)}
@@ -218,7 +232,7 @@ class Manager extends React.Component<{}, ownState> {
                     Prev page
                   </Button>
                 </Col>
-                <Col md="6">
+                <Col md="6" className="col">
                   <Button
                     className="btn-sm-dark float-right"
                     onClick={(event) => this.handleNextPageClick(event)}

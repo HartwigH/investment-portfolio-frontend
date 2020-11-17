@@ -113,7 +113,7 @@ const Login: React.FC = () => {
                 </div>
               </Col>
               <Col md="6">
-                <div className="login">
+                <div className="register">
                   <h1>New? Register below</h1>
                   <Form>
                     <FormGroup>

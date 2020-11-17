@@ -35,3 +35,32 @@
     }
   }
 }
+
+.menu-open {
+  background-color: white !important;
+  -webkit-box-shadow:  0 -8px 20px -6px black;
+    -moz-box-shadow:  0 -8px 20px -6px black;
+    box-shadow: 0 -8px 20px -6px black;
+}
+
+.menu-close {
+  transition: 0.5s;
+}
+
+@media (max-width: 591px) {
+  .port-navbar.port-default {
+    padding: 20px;
+
+    .port-navbar {
+      &-brand {
+        font-size: 18px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+    }
+  }
+
+  .navbar-brand {
+    margin-right: 0;
+  }
+}

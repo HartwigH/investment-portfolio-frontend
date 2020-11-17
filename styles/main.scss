@@ -57,6 +57,7 @@ body {
   font-weight: bold;
   border: 4px solid black;
   color: black;
+  margin-bottom: 20px;
 
   &:hover,
   &:focus {
@@ -117,3 +118,17 @@ body {
   }
 }
 
+.footer {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+}
+
+@media (max-width: 591px) {
+  .base-page {
+    padding-top: 100px;
+  }
+}

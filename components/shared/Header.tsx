@@ -60,10 +60,12 @@ const Header: React.FC = () => {
 
   const cookies = parseCookies().jwt;
 
+  const menuOpenClass = isOpen ? 'menu-open' : 'menu-close';
+
   return (
     <div>
       <Navbar
-        className="port-navbar port-default absolute"
+        className={`port-navbar port-default absolute ${menuOpenClass}`}
         color="transparent"
         light
         expand="md"

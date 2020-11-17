@@ -14,3 +14,12 @@
   margin-top: 20px;
   max-width: 380px;
 }
+
+
+@media (max-width: 591px) {
+  .register {
+    h1 {
+      font-size: 1.5rem;
+    }
+  }
+}

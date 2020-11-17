@@ -1,3 +1,14 @@
 .about-img {
-    height: 250px;
+  height: 250px;
+}
+
+@media (max-width: 591px) {
+
+  .display-3 {
+    font-size: 2rem;
+  }
+
+  .about-img {
+    height: auto;
+  }
 }

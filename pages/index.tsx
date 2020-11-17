@@ -1,6 +1,7 @@
 import React from "react";
 import Typed from "react-typed";
 import BaseLayout from "../components/layouts/BaseLayout";
+import BasePage from "../components/BasePage";
 import Router from "next/router";
 import { Container, Row, Col, Button } from "reactstrap";
 
@@ -12,6 +13,7 @@ const Home: React.FC = () => {
 
   return (
     <BaseLayout className="home">
+      <BasePage>
       <div className="main-section">
         <div className="background-image">
           <img
@@ -20,7 +22,7 @@ const Home: React.FC = () => {
           />
         </div>
 
-        <Container>
+        <Container className="index-page">
           <Row>
             <Col md="6">
               <div className="hero-section">
@@ -72,6 +74,7 @@ const Home: React.FC = () => {
           </Row>
         </Container>
       </div>
+      </BasePage>
     </BaseLayout>
   );
 };

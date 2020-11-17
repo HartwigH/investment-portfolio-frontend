@@ -19,12 +19,12 @@ const About: React.FC<Props> = ({ about }) => {
 
   return (
     <BaseLayout>
-      <BasePage>
+      <BasePage className="about-page">
         <Jumbotron>
           <h1 className="display-3">{about.title}</h1>
           <p className="lead">{about.content}</p>
           <hr className="my-2" />
-          <div className="text-center"></div>
+          <div className="text-center">
           {about.cover !== null && (
             <img
               src={API_URL + about.cover.url}
@@ -33,12 +33,12 @@ const About: React.FC<Props> = ({ about }) => {
             />
           )}
           {about.cover === null && (
-            <p>
-              Like with project updates on Heroku, the file system doesn't
-              support local uploading of files as they will be wiped when Heroku
-              "Cycles" the dyno.
-            </p>
+            <img
+            src="/static/images/next+strapi.png"
+            className="img-fluid about-img"
+          />
           )}
+          </div>
         </Jumbotron>
       </BasePage>
     </BaseLayout>
